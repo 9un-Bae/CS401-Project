@@ -722,6 +722,11 @@ section.blog {
 /******* Carousel ******/
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 
+.carousel-inner .item img {
+  width: 100%;
+  height: 500px; /* or any height you want */
+  object-fit: cover; /* fills the box while keeping aspect ratio */
+}
 
 .carousel {
     position: relative;
