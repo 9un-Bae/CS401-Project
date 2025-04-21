@@ -7,11 +7,11 @@
         <meta name="generator" content="Bootply" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/demo.css" />
-        <link rel="stylesheet" href="css/testimonial.css" />
-        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/testimonial.css') }}" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
         <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
     </head>
 
@@ -55,7 +55,7 @@
                     <div class="post item col-md-4 col-xs-12 col-sm-4">
                       <div class="panel">
                         <div class="panel-header">
-                          <img src="img/blog-bg-children-02.jpg" class="img-responsive"  alt="image"/>
+                          <img src="{{ url_for('static', filename='img/AlohaHarvest.jpg') }}" class="img-responsive"  alt="image"/>
                         </div>
                         <div class="panel-body">
                           <h3 class="post-title"><a href="blog-post.html">Aloha Harvest</a></h3>
@@ -67,7 +67,7 @@
                     <div class="post item col-md-4 col-xs-12 col-sm-4">
                       <div class="panel">
                         <div class="panel-header">
-                          <img src="img/gal-bg-feet-01.jpg" class="img-responsive"  alt="image"/>
+                          <img src="{{ url_for('static', filename='img/Pantry.png') }}" class="img-responsive"  alt="image"/>
                         </div>
                         <div class="panel-body">
                           <h3 class="post-title"><a href="blog-post.html">The Pantry</a></h3>
@@ -79,7 +79,7 @@
                     <div class="post item col-md-4 col-xs-12 col-sm-4">
                       <div class="panel">
                         <div class="panel-header">
-                          <img src="img/blog-bg-school-01.jpg" class="img-responsive"  alt="image"/>
+                          <img src="{{ url_for('static', filename='img/FoodBank.jpg') }}" class="img-responsive"  alt="image"/>
                         </div>
                           <div class="panel-body">
                             <h3 class="post-title"><a href="blog-post.html">Hawai'i Food Bank</a></h3>
@@ -113,11 +113,11 @@
     </footer>
 
   <!-- script references -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/nav-hover.min.js"></script>
-    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/nav-hover.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.bxslider.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
     <!-- Place in the <head>, after the three links -->
     <script>
      $('.testimonials-slider').bxSlider({
