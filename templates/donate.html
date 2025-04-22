@@ -1,178 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <title>Hunger Helpers</title>
-        <meta name="generator" content="Bootply" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/demo.css" />
-        <link rel="stylesheet" href="css/testimonial.css" />
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    </head>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>Hunger Helpers</title>
+    <meta name="generator" content="Bootply" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/testimonial.css') }}" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+    <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Poiret+One' type='text/css'>
+  </head>
 
-
-    <body>
+  <body>
     <div class="header container text-center">
-      <a rel="home" href="index.html">
-        <img src="img/HH.png" width="200" alt="logo" class="img-responsive center-block">
+      <a rel="home" href="{{ url_for('index') }}">
+          <img src="{{ url_for('static', filename='img/HH.png') }}" width="200" alt="logo" class="img-responsive center-block">
       </a>
     </div>
 
-        <div class="navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resource.html">Resources</a></li>
-                    <li><a href="volunteer.html">Volunteer</a></li>
-                    <li class="selected"><a href="donate.html">Donate</a></li>
-                </ul>
-            </div>
+    <div class="navbar" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
         </div>
-        <div class="divider col-sm-12 col-xs-12 col-md-12">
-            <div class="header-text"><span>Donate</span> Here</div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="resource.html">Resources</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
+                <li class="selected"><a href="donate.html">Donate</a></li>
+            </ul>
         </div>
-        <div class="col-md-12 container">
-            <div class="donate-content">
-              <div class="donate-body">
-                <div class="accent-rule-short"></div>
-                <h2>Join us in helping people survive and rebuild their lives. </h2>
-                <ul class="list-unstyled list-inline">
-                    <li><button type="button" id="p1" class="btn btn-primary btn-xl btn-block">$15</button></li>
-                    <li><button type="button" id="p2" class="btn btn-primary btn-xl btn-block">$25</button></li>
-                    <li><button type="button" id="p3" class="btn btn-primary btn-xl btn-block">$50</button></li>
-                    <li><button type="button" id="p4" class="btn btn-primary btn-xl btn-block">$75</button></li>
-                    <li><button type="button" id="p5" class="btn btn-primary btn-xl btn-block">$100</button></li>
-                    <li>
-                        <div class="control-group">
-                          <div class="form-control-donate controls">
-                            <input name="textinput" placeholder="$ Other Amount" class="form-control" type="text">
-                          </div>
-                        </div>
-                    </li>
-                </ul>
-                <br>
-                <!-- monthly / one-time -->
-                      <form class="form-horizontal text-center">
-                        <fieldset>
-                        <div class="form-group">
-                          <div class="col-md-12">
-                            <label class="radio-inline" for="radios-s">
-                              <input name="radios" id="radios-s" value="1" checked="checked" type="radio">
-                              Single Donation
-                            </label>
-                            <label class="radio-inline" for="radios-m">
-                              <input name="radios" id="radios-m" value="2" type="radio">
-                              Monthly Donation
-                            </label>
-                          </div>
-                      </div>
-                      </fieldset>
-                    </form>
-                <br>
-                <button type="button" class="btn btn-tertiary btn-xl btn-rounded-edge" data-dismiss="donate">Continue</button>
-                <br><br>
-            </div>
-          </div>
-        </div>
-        <div class="container donate-text">
-        <h3 class="text-center">Lorem ipsum dolor sit amet</h3>
-        
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        </p>  
-        </div>
+    </div>
 
-        <div class="fun-fact col-md-12">
-        <div class="stat">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="milestone-counter">
-                    <i class="fa fa-users fa-3x"></i>
-                    <span class="stat-count highlight">422</span>
-                    <div class="milestone-details">Happy Volunteers</div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="milestone-counter">
-                    <i class="fa fa-map-marker fa-3x"></i>
-                    <span class="stat-count highlight">26</span>
-                    <div class="milestone-details">Countries Served</div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="milestone-counter">
-                    <i class="fa fa-trophy fa-3x"></i>
-                    <span class="stat-count highlight">14</span>
-                    <div class="milestone-details">Awards Win</div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                <div class="milestone-counter">
-                    <i class="fa fa-money fa-3x"></i>
-                    <span class="stat-count highlight">232</span>
-                    <div class="milestone-details">Million USD Donated</div>
-                </div>
-            </div>
-    </div><!-- stat -->
-  </div>
+<!-- Donate -->
+<div class="container donate-orgs">
+  <div class="row text-center">
 
-
-    <!-- ============FOOTER============= -->
-    <footer id="footer"> 
-      <div class="footer-content container text-center">
-        
-        <!-- Heading -->
-        <h4>Great love for humanity</h4>
-        
-        <!-- Social Icons -->
-        <div class="social-block">
-          <div class="social-share">
-            <i class="fa fa-2x fa-facebook"></i>
-            <i class="fa fa-2x fa-twitter"></i>
-            <i class="fa fa-2x fa-google-plus"></i>
-            <i class="fa fa-2x fa-instagram"></i>
-          </div>
-        </div>
-        
+    <div class="col-md-4">
+      <div class="org-box">
+        <img src="{{ url_for('static', filename='images/FoodBankLogo.png') }}" alt="Hawaii Foodbank" class="img-responsive center-block org-img">
+        <h3>Hawaii Foodbank</h3>
+        <a href="https://hawaiifoodbank.org/?form=FUNLSDJGUQN" target="_blank" class="btn btn-donate">Donate</a>
       </div>
-      <div class="move-top-page"></div>
-    </footer>
+    </div>
 
-    <!-- script references -->
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/nav-hover.min.js"></script>
-        <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-        <script type="text/javascript" src="js/main.js"></script>
+    <div class="col-md-4">
+      <div class="org-box">
+        <img src="{{ url_for('static', filename='images/AlohaHarvestLogo.jpeg') }}" alt="Aloha Harvest" class="img-responsive center-block org-img">
+        <h3>Aloha Harvest</h3>
+        <a href="https://alohaharvest.org/donate-money/" target="_blank" class="btn btn-donate">Donate</a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="org-box">
+        <img src="{{ url_for('static', filename='images/GiveHopeLogo.png') }}" alt="Giving Hope" class="img-responsive center-block org-img">
+        <h3>Giving Hope</h3>
+        <a href="https://givinghopenola.org/donate/" target="_blank" class="btn btn-donate">Donate</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Message -->
+    <div class="container donate-text">
+      <h3 class="text-center">With Aloha in Our Hearts, We Mālama Together</h3>
+      <p>
+        The spirit of aloha flows through these islands like the wind. 
+        It's gentle, constant, and full of grace. 
+        When we give, we do more than offer help; we honor one another. 
+        We mālama our people, our land, and our future. 
+        Every act of kindness plants a seed of hope. 
+        Let’s grow something beautiful, together.
+      </p>  
+    </div>
+
+<!-- ============FOOTER============= -->
+  <footer id="footer"> 
+    <div class="footer-content container text-center">
+      
+      <!-- Heading -->
+      <h4>Great Love for Humanity</h4>
+      
+      <!-- Project Info -->
+      <div class="project-info mt-3">
+        <p><strong>Chaminade University of Honolulu</strong></p>
+        <p>CS401 – Software Engineering • Spring 2025</p>
+        <p>Team: The Hunger Helpers</p>
+        <p>&copy; 2025 Hunger Helpers. All rights reserved.</p>
+      </div>
+
+    </div>
+    <div class="move-top-page">
+      <div class="button-totop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+        <i class="fa fa-angle-up"></i>
+      </div>
+    </div>
+  </footer>
+
+<!-- script references -->
+  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/nav-hover.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.bxslider.min.js') }}"></script>
+  <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+
     <!-- Place in the <head>, after the three links -->
     <script>
-     $('.testimonials-slider').bxSlider({
+    $('.testimonials-slider').bxSlider({
       slideWidth: 800,
       minSlides: 1,
       maxSlides: 1,
       slideMargin: 32,
       auto: true,
-      autoControls: true
       });
     </script>
-        <script type="text/javascript">
-        </script>
-    </body>
+    <script type="text/javascript"></script>
+  </body>
 </html>

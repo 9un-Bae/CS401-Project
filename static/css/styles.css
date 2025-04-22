@@ -267,23 +267,45 @@ p.text-center.sub-text {
 /*-------------------------------------------------------------------------------------------------------------------------------*/
 /******* Donations ******/
 /*-------------------------------------------------------------------------------------------------------------------------------*/
-.btn-block {
-	margin-right: 10px;
-	padding: 12px 37px;
-	background: #68ABBB;
-	margin-bottom: 10px;
+.donate-orgs {
+  background-color: transparent; /* or remove this line completely */
+  padding: 40px 0;
 }
-.form-control {
-	height: 47px;
+
+.org-box {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 30px 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-.donate-body {
-	margin: 0 auto;
-	text-align: center;
+
+.org-box:hover {
+  transform: translateY(-5px);
 }
-.btn-tertiary{
-	padding: 12px 37px;
-	background: #68ABBB;
-	color: white;
+
+.org-img {
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.btn-donate {
+  background-color: #68ABBB;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.btn-donate:hover {
+  background-color: #4c8a99;
+  color: white;
+  text-decoration: none;
 }
 
 /*-------------------------------------------------------------------------------------------------------------------------------*/
