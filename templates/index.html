@@ -8,41 +8,36 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		
     <!-- Latest compiled and minified CSS -->
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/demo.css" />
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+		<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}" />
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+		<link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet" type="text/css">
 	</head>
-
   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 	<body>
-    <div class="header container text-center">
-      <a rel="home" href="index.html">
-        <img src="img/HH.png" width="200" alt="logo" class="img-responsive center-block">
+    <div class="header text-center" style="margin-bottom: 20px;">
+      <a rel="home" href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='img/HH.png') }}" width="200" alt="logo" class="img-responsive center-block">
       </a>
     </div>    
-		
-    <div class="navbar" role="navigation">
-			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<span class="sr-only">Toggle navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-			</div>
-      <div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav">
-					<li class="selected"><a href="index.html">Home</a></li>
-					<li><a href="about.html">About</a></li>
-          <li><a href="resource.html">Resources</a></li>
-					<li><a href="volunteer.html">Volunteer</a></li>
-					<li><a href="donate.html">Donate</a></li>
-				</ul>
-			</div>
-		</div>
-
+  
+    <div class="navbar navbar-default">
+      <div class="container text-center">
+        <ul class="nav navbar-nav">
+          <li class="selected"><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('resource') }}">Resources</a></li>
+          <li><a href="{{ url_for('volunteer') }}">Volunteer</a></li>
+          <li><a href="{{ url_for('donate') }}">Donate</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <!-- Carousel -->
 		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
       <ol class="carousel-indicators">
@@ -50,147 +45,132 @@
         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
       </ol>
-      <!-- Image Carousel -->
-      <div class="carousel-inner" role="listbox">
+    
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
         <div class="item active">
-          <img src="img/AlohaHarvestLogo.jpg" alt="">
+          <img src="{{ url_for('static', filename='img/AlohaHarvestLogo.jpg') }}" alt="Slide 1">
           <div class="carousel-caption">
-            Help the community
+            Help The Community
           </div>
         </div>
         <div class="item">
-          <img src="img/slide2.jpg" alt="">
+          <img src="{{ url_for('static', filename='img/slide2.jpg') }}" alt="Slide 2">
           <div class="carousel-caption">
-            Be a donor
+            Be a Donor
           </div>
         </div>
         <div class="item">
-          <img src="img/FoodBankLogo.jpg" alt="">
+          <img src="{{ url_for('static', filename='img/FoodBankLogo.jpg') }}" alt="Slide 3">
           <div class="carousel-caption">
-            Be a volunteer
+            Be a Volunteer
           </div>
         </div>
       </div>
+    
       <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
+      <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
       </a>
-      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
+      <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
       </a>
-		</div>
+    </div>
 
-    <div class="container header-start text-center">
-        <div class="heading-icon">
-          <i class="fa fa-3x fa-heart"></i>
-        </div>
+    <!-- Community Message -->
+    <section class="container header-start text-center">
+      <div class="heading-icon">
+        <i class="fa fa-3x fa-heart" aria-hidden="true"></i>
+      </div>
       <h1 class="main-text">ʻAʻohe hana nui ke alu ʻia</h1>
       <h3 class="second-text"><em>No task is too big when done together by all</em></h3>
       <p class="text-center sub-text">
-          In the spirit of aloha, we come together as one ʻohana to uplift and care for one another. 
-          Hawaiʻi is more than just a place. It's a community built on love, respect, and resilience. 
-          When we share food, time, or kindness, we strengthen the bonds that make our islands thrive. 
-          Every donation, every act of service, every helping hand makes a ripple across our shores. 
-          Together, we are planting seeds of hope and nourishing the heart of Hawaiʻi, one person at a time.
+        In the spirit of aloha, we come together as one ʻohana to uplift and care for one another. 
+        Hawaiʻi is more than just a place. It's a community built on love, respect, and resilience. 
+        When we share food, time, or kindness, we strengthen the bonds that make our islands thrive. 
+        Every donation, every act of service, every helping hand makes a ripple across our shores. 
+        Together, we are planting seeds of hope and nourishing the heart of Hawaiʻi, one person at a time.
       </p>
-    </div>
-
-    <div class="divider col-sm-12 col-xs-12 col-md-12">
-      <div class="header-text"><span>Blog</span> News</div>
-    </div>
-
-    <section class="blog">
-      <div class="item col-md-4">
-          <div class="blok-read-sm">
-            <a href="single1.html" class="hover-image">
-              <img src="img/sea.jpg" alt="image">
-              <span class="layer-block"></span>
-            </a>
-            <div class="content-block">
-              <span class="point-caption bg-blue-point"></span>
-              <span class="bottom-line bg-blue-point"></span>
-                <h4>Title</h4>
-                <p>Opening sentence & add hyperlink to 'read more'</p>
-                <div class="button-main bg-fio-point">read more</div>
-            </div>
-          </div>
-        </div>
-
-      <div class="item col-md-4">
-        <div class="blok-read-sm">
-          <a href="single1.html" class="hover-image">
-              <img src="img/sea.jpg" alt="image">
-              <span class="layer-block"></span>
-          </a>
-          <div class="content-block">
-            <span class="point-caption bg-blue-point"></span>
-            <span class="bottom-line bg-blue-point"></span>
-              <h4>Title</h4>
-              <p>Opening sentence & add hyperlink to 'read more'</p>
-              <div class="button-main bg-fio-point">read more</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="item col-md-4">
-        <div class="blok-read-sm">
-            <a href="single1.html" class="hover-image">
-                <img src="img/sea.jpg" alt="image">
-                <span class="layer-block"></span>
-            </a>
-          <div class="content-block">
-            <span class="point-caption bg-blue-point"></span>
-            <span class="bottom-line bg-blue-point"></span>
-              <h4>Title</h4>
-              <p>Opening sentence & add hyperlink to 'read more'</p>
-              <div class="button-main bg-fio-point">read more</div>
-          </div>
-          </div>
-      </div>
     </section>
+
+    <!-- News -->
+<div class="divider col-12">
+  <div class="header-text"><span>Blog</span> News</div>
+</div>
+
+<section class="blog">
+  <div class="blog-row">
+    <!-- Post 1 -->
+    <div class="blok-read-sm card">
+      <img src="{{ url_for('static', filename='img/sea.jpg') }}" class="blog-img" alt="Blog 1">
+      <div class="content-block">
+        <h4><a href="single1.html">Title 1</a></h4>
+        <p>Opening sentence for post 1.</p>
+        <a href="single1.html" class="button-main bg-fio-point">Read more</a>
+      </div>
+    </div>
+
+    <!-- Post 2 -->
+    <div class="blok-read-sm card">
+      <img src="{{ url_for('static', filename='img/sea.jpg') }}" class="blog-img" alt="Blog 2">
+      <div class="content-block">
+        <h4><a href="single2.html">Title 2</a></h4>
+        <p>Opening sentence for post 2.</p>
+        <a href="single2.html" class="button-main bg-fio-point">Read more</a>
+      </div>
+    </div>
+
+    <!-- Post 3 -->
+    <div class="blok-read-sm card">
+      <img src="{{ url_for('static', filename='img/sea.jpg') }}" class="blog-img" alt="Blog 3">
+      <div class="content-block">
+        <h4><a href="single3.html">Title 3</a></h4>
+        <p>Opening sentence for post 3.</p>
+        <a href="single3.html" class="button-main bg-fio-point">Read more</a>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- ============FOOTER============= -->
     <footer id="footer"> 
       <div class="footer-content container text-center">
         
         <!-- Heading -->
-        <h4>Great love for humanity</h4>
+        <h4>Great Love for Humanity</h4>
         
-        <!-- Social Icons -->
-        <div class="social-block">
-          <div class="social-share">
-            <i class="fa fa-2x fa-facebook"></i>
-            <i class="fa fa-2x fa-twitter"></i>
-            <i class="fa fa-2x fa-google-plus"></i>
-            <i class="fa fa-2x fa-instagram"></i>
-          </div>
+        <!-- Project Info -->
+        <div class="project-info mt-3">
+          <p><strong>Chaminade University of Honolulu</strong></p>
+          <p>CS401 – Software Engineering • Spring 2025</p>
+          <p>Team: The Hunger Helpers</p>
+          <p>&copy; 2025 Hunger Helpers. All rights reserved.</p>
         </div>
-        
+
       </div>
-      <div class="move-top-page"></div>
+      <div class="move-top-page">
+        <div class="button-totop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+          <i class="fa fa-angle-up"></i>
+        </div>
+      </div>
     </footer>
 
-	<!-- script references -->
-		<script src="js/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-    <script src="js/nav-hover.min.js"></script>
-    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    
-    <!-- Place in the <head>, after the three links -->
+    <!-- script references -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/nav-hover.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.bxslider.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- Carousel -->
     <script>
-      $('.testimonials-slider').bxSlider({
-      slideWidth: 800,
-      minSlides: 1,
-      maxSlides: 1,
-      slideMargin: 32,
-      auto: true,
-      autoControls: true
+      $(document).ready(function () {
+        $('#carousel-example-generic').carousel({
+          interval: 5000,  // Set interval (optional)
+          pause: 'hover'   // Pause on hover (optional)
+        });
       });
     </script>
-		<script type="text/javascript">
-		</script>
+
 	</body>
 </html>
