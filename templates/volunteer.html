@@ -1,269 +1,197 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-        <meta charset="utf-8">
-        <title>Humanity</title>
-        <meta name="generator" content="Bootply" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-        <!-- Latest compiled and minified CSS -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link href="css/styles.css" rel="stylesheet">
-        <link rel="stylesheet" href="css/demo.css" />
-        <link rel="stylesheet" href="css/testimonial.css" />
-        <link rel="stylesheet" href="css/font-awesome.min.css">
-        <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-    </head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Volunteer | Hunger Helpers</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/testimonial.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
+  
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One&display=swap" rel="stylesheet">
+  </head>
 
-
-    <body>
+  <body>
+    <!-- Header -->
     <div class="header container text-center">
-      <a rel="home" href="index.html">
-        <img src="img/HH.png" width="200" alt="logo" class="img-responsive center-block">
+      <a rel="home" href="{{ url_for('index') }}">
+        <img src="{{ url_for('static', filename='img/HH.png') }}" width="200" alt="logo" class="img-responsive center-block">
       </a>
     </div>
-
-        <div class="navbar" role="navigation">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="resource.html">Resources</a></li>
-                    <li class="selected"><a href="volunteer.html">Volunteer</a></li>
-                    <li><a href="donate.html">Donate</a></li>
-                </ul>
-            </div>
-        </div>
-
-    <div class="divider col-sm-12 col-xs-12 col-md-12">
-        <div class="header-text"><span>Volunteer</span> Events</div>
+  
+    <!-- Navbar -->
+    <div class="navbar navbar-default" role="navigation">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+          <li><a href="{{ url_for('resource') }}">Resources</a></li>
+          <li class="selected"><a href="{{ url_for('volunteer') }}">Volunteer</a></li>
+          <li><a href="{{ url_for('donate') }}">Donate</a></li>
+        </ul>
+      </div>
     </div>
 
+    <div class="divider col-sm-12 col-xs-12 col-md-12">
+      <div class="header-text"><span>Volunteer</span> Events</div>
+    </div>
+    
+    <!-- Tabbed content -->
     <div id="exTab2" class="col-md-8 col-lg-7 col-lg-offset-1 col-md-offset-1">
+      <!-- Nav tabs -->
       <ul class="nav nav-tabs">
-            <li class="active">
-              <a  href="#1" data-toggle="tab">Overview</a>
-            </li>
-            <li><a href="#2" data-toggle="tab">Recent Event</a>
-            </li>
-            <li><a href="#3" data-toggle="tab">Upcoming Event</a>
-            </li>
-        </ul>
+        <li class="active">
+          <a href="#1" data-toggle="tab">Overview</a>
+        </li>
+        <li>
+          <a href="#2" data-toggle="tab">Recent Event</a>
+        </li>
+        <li>
+          <a href="#3" data-toggle="tab">Upcoming Event</a>
+        </li>
+      </ul>
 
-        <div class="tab-content ">
-          <div class="tab-pane active" id="1">
-            <div class="blog-event">
-              <div class="featured-img">
-                <img src="images/clients/1.jpg" width="150" alt="">
-              </div>
-              <div class="featured-blog">
-                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                  <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                  <button class="button-info">Read More</button>
-                  <button class="button-info">Register</button>
-              </div>
-            </div>
-            <div class="blog-event">
-              <div class="featured-img">
-                  <img src="images/clients/2.jpg" width="150" alt="">
-              </div>
-              <div class="featured-blog">
-                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                  <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                  <button class="button-info">Read More</button>
-                  <button class="button-info">Register</button>
-              </div>
-            </div>
-            <div class="blog-event">
-              <div class="featured-img">
-                  <img src="images/clients/3.jpg" width="150" alt="">
-              </div>
-              <div class="featured-blog">
-                <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                <button class="button-info">Read More</button>
-                <button class="button-info">Register</button>
-              </div>
-            </div>
-            <div class="blog-event">
-              <div class="featured-img">
-                  <img src="images/clients/3.jpg" width="150" alt="">
-              </div>
-              <div class="featured-blog">
-                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                  <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                  <button class="button-info">Read More</button>
-                  <button class="button-info">Register</button>
-              </div>
-            </div>
-            <div class="blog-event">
-              <div class="featured-img">
-                  <img src="images/clients/3.jpg" width="150" alt="">
-              </div>
-              <div class="featured-blog">
-                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                  <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                  <button class="button-info">Read More</button>
-                  <button class="button-info">Register</button>
-              </div>
-            </div>
-          </div>
-          <div class="tab-pane" id="2">
-            <div class="blog-event">
-                <div class="featured-img">
-                  <img src="images/clients/2.jpg" width="150" alt="">
-                </div>
-                <div class="featured-blog">
-                    <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                    <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                    <button class="button-info">Read More</button>
-                    <button class="button-info">Register</button>
-                </div>
-            </div>
-            <div class="blog-event">
-              <div class="featured-img">
-                  <img src="images/clients/2.jpg" width="150" alt="">
-              </div>
-              <div class="featured-blog">
-                  <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                  <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                  <button class="button-info">Read More</button>
-                  <button class="button-info">Register</button>
-              </div>
-            </div>
-            <div class="blog-event">
-              <div class="featured-img">
-                <img src="images/clients/3.jpg" width="150" alt="">
-              </div>
-              <div class="featured-blog">
-                <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                <button class="button-info">Read More</button>
-                <button class="button-info">Register</button>
-              </div>
-            </div>
-              <div class="blog-event">
+      <div class="tab-content">
+        <div class="tab-pane active" id="1">
+          <div class="blog-event">
+<!-- Event 1 -->
             <div class="featured-img">
-              <img src="images/clients/3.jpg" width="150" alt="">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
             </div>
-          <div class="featured-blog">
+            <div class="featured-blog">
+              <h3>Event Title</h3>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
+<!-- Event 2 -->
+            <div class="featured-img">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
+            </div>
+            <div class="featured-blog">
               <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-              <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-              <button class="button-info">Read More</button>
-              <button class="button-info">Register</button>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
+<!-- Event 3 -->
+            <div class="featured-img">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
+            </div>
+            <div class="featured-blog">
+              <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
+<!-- Event 4 -->
+            <div class="featured-img">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
+            </div>
+            <div class="featured-blog">
+              <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
+<!-- Event 5 -->
+            <div class="featured-img">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
+            </div>
+            <div class="featured-blog">
+              <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
+<!-- Event 6 -->
+            <div class="featured-img">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
+            </div>
+            <div class="featured-blog">
+              <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
+<!-- Event 7 -->
+            <div class="featured-img">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
+            </div>
+            <div class="featured-blog">
+              <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
+<!-- Event 8 -->
+            <div class="featured-img">
+              <img src="{{ url_for('static', filename='images/clients/1.jpg') }}" class="img-responsive" width="150" alt="Event Image">
+            </div>
+            <div class="featured-blog">
+              <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
+              <p>From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+              
+              <!-- Buttons for "Read More" and "Register" -->
+              <button class="btn btn-info">Read More</button>
+              <button class="btn btn-primary">Register</button>
+            </div>
           </div>
         </div>
-            <div class="blog-event">
-          <div class="featured-img">
-              <img src="images/clients/3.jpg" width="150" alt="">
-          </div>
-          <div class="featured-blog">
-              <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-              <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-              <button class="button-info">Read More</button>
-              <button class="button-info">Register</button>
-          </div>
-            </div>
-            </div>
-            <div class="tab-pane" id="3">
-              <div class="blog-event">
-                  <div class="featured-img">
-                      <img src="images/clients/2.jpg" width="150" alt="">
-                  </div>
-                  <div class="featured-blog">
-                      <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                      <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                      <button class="button-info">Read More</button>
-                      <button class="button-info">Register</button>
-                  </div>
-                    </div>
-                    <div class="blog-event">
-                      <div class="featured-img">
-                          <img src="images/clients/2.jpg" width="150" alt="">
-                      </div>
-                      <div class="featured-blog">
-                          <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                          <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
+      </div>
+    </div>
 
-                          <button class="button-info">Read More</button>
-                          <button class="button-info">Register</button>
-                      </div>
-                    </div>
-                    <div class="blog-event">
-                  <div class="featured-img">
-                      <img src="images/clients/3.jpg" width="150" alt="">
-                  </div>
-                  <div class="featured-blog">
-                      <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                      <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                      <button class="button-info">Read More</button>
-                      <button class="button-info">Register</button>
-                  </div>
-                    </div>
-                    <div class="blog-event">
-                  <div class="featured-img">
-                      <img src="images/clients/3.jpg" width="150" alt="">
-                  </div>
-                  <div class="featured-blog">
-                      <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                      <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                      <button class="button-info">Read More</button>
-                      <button class="button-info">Register</button>
-                  </div>
-                    </div>
-                    <div class="blog-event">
-                  <div class="featured-img">
-                      <img src="images/clients/3.jpg" width="150" alt="">
-                  </div>
-                  <div class="featured-blog">
-                      <h3>Standard tab panel created on bootstrap using nav-tabs</h3>
-                      <p> From talks to charity drives to community service, this is where you can find out what’s going on, and sign up!</p>
-                      <button class="button-info">Read More</button>
-                      <button class="button-info">Register</button>
-                  </div>
-                    </div>
-                </div>
-              </div>
-            </div>
-
-    <!-- ============FOOTER============= -->
+<!-- ============FOOTER============= -->
     <footer id="footer"> 
       <div class="footer-content container text-center">
         
         <!-- Heading -->
-        <h4>Great love for humanity</h4>
+        <h4>Great Love for Humanity</h4>
         
-        <!-- Social Icons -->
-        <div class="social-block">
-          <div class="social-share">
-            <i class="fa fa-2x fa-facebook"></i>
-            <i class="fa fa-2x fa-twitter"></i>
-            <i class="fa fa-2x fa-google-plus"></i>
-            <i class="fa fa-2x fa-instagram"></i>
-          </div>
+        <!-- Project Info -->
+        <div class="project-info mt-3">
+          <p><strong>Chaminade University of Honolulu</strong></p>
+          <p>CS401 – Software Engineering • Spring 2025</p>
+          <p>Team: The Hunger Helpers</p>
+          <p>&copy; 2025 Hunger Helpers. All rights reserved.</p>
         </div>
-        
+
       </div>
-      <div class="move-top-page"></div>
+      <div class="move-top-page">
+        <div class="button-totop" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">
+          <i class="fa fa-angle-up"></i>
+        </div>
+      </div>
     </footer>
 
   <!-- script references -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/nav-hover.min.js"></script>
-    <script type="text/javascript" src="js/jquery.bxslider.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-    <!-- Place in the <head>, after the three links -->
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/nav-hover.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.bxslider.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script>
-     $('.testimonials-slider').bxSlider({
+      $('.testimonials-slider').bxSlider({
       slideWidth: 800,
       minSlides: 1,
       maxSlides: 1,
@@ -271,8 +199,6 @@
       auto: true,
       autoControls: true
       });
-    </script>
-    <script type="text/javascript">
     </script>
   </body>
 </html>

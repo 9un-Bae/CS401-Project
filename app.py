@@ -16,7 +16,7 @@ def donate():
 
 @app.route('/volunteer.html', methods=['GET'])
 def volunteer():
-    return render_template('create.html')
+    return render_template('volunteer.html')
 
 @app.route('/resource.html', methods=['GET'])
 def resource():
