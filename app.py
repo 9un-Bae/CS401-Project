@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 
 app = Flask(__name__)
 
@@ -142,6 +142,35 @@ def registration():
         upcoming_events=volunteer_data["upcoming_events"]
     )
 
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    name = data.get("name")
+    org_name = data.get("organization")
+
+    for org in volunteer_data["organizations"]:
+        if org["name"] == org_name:
+            if "members" not in org:
+                org["members"] = []
+            org["members"].append(name)
+            return jsonify({"message": f"{name} added to {org_name}"}), 201
+
+    return jsonify({"error": "Organization not found"}), 404
+
+@app.route('/remove_member', methods=['DELETE'])
+def remove_member():
+    data = request.get_json()
+    name = data.get("name")
+    org_name = data.get("organization")
+
+    for org in volunteer_data["organizations"]:
+        if org["name"] == org_name:
+            if "members" in org and name in org["members"]:
+                org["members"].remove(name)
+                return jsonify({"message": f"{name} removed from {org_name}"}), 200
+            return jsonify({"error": "Member not found"}), 404
+
+    return jsonify({"error": "Organization not found"}), 404
 
 @app.route('/resource.html', methods=['GET'])
 def resource():
