@@ -37,25 +37,45 @@
 
     <div class="tab-content" style="padding-top: 20px;">
       <!-- Organizations -->
-      <div class="tab-pane active" id="organizations">
-        <h3 class="text-center">Get involved with our local partners</h3>
-        <div class="row" style="margin-top: 30px;">
-          {% for org in organizations %}
-          <div class="col-md-4 col-sm-6 text-center" style="margin-bottom: 40px;">
-            <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">          
-              <a href="{{ org.website }}" target="_blank">
-                <img src="{{ url_for('static', filename=org.image) }}" alt="{{ org.name }}" class="img-responsive center-block" style="max-height: 120px; margin-bottom: 15px;">
-                <h4 style="margin-top: 10px;">{{ org.name }}</h4>
-              </a>
-              <p style="margin: 10px 0;">{{ org.description }}</p>
-              <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#registerModal" data-org="{{ org.name }}" data-event="General Organization Interest">
-                Register
-              </button>
-            </div>
-          </div>
-          {% endfor %}
-        </div>
+<div class="tab-pane active" id="organizations">
+  <h3 class="text-center">Get involved with our local partners</h3>
+  <div class="row" style="margin-top: 30px;">
+    {% for org in organizations %}
+    <div class="col-md-4 col-sm-6 text-center" style="margin-bottom: 40px;">
+      <div style="background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.05);">          
+        <a href="{{ org.website }}" target="_blank">
+          <img src="{{ url_for('static', filename=org.image) }}" alt="{{ org.name }}" class="img-responsive center-block" style="max-height: 120px; margin-bottom: 15px;">
+          <h4 style="margin-top: 10px;">{{ org.name }}</h4>
+        </a>
+        <p style="margin: 10px 0;">{{ org.description }}</p>
+
+        {% if org.members %}
+          <p><strong>Members:</strong></p>
+          <ul class="list-unstyled">
+            {% for member in org.members %}
+              <li>
+                {{ member }}
+                <button class="btn btn-xs btn-danger remove-member"
+                        data-org="{{ org.name }}"
+                        data-member="{{ member }}">
+                  Remove
+                </button>
+              </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          <p><em>No members yet</em></p>
+        {% endif %}
+
+        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#registerModal" data-org="{{ org.name }}" data-event="General Organization Interest">
+          Register
+        </button>
       </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
       
 
       <!-- Events -->
@@ -86,14 +106,14 @@
   <div class="modal fade" id="registerModal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
-        <form action="/add_volunteer" method ="post" > 
+        <form id="volunteerModalForm">
           <div class="modal-header">
             <h4 class="modal-title">Volunteer Registration</h4>
           </div>
           <div class="modal-body">
             <div class="form-group">
               <label>Name</label>
-              <input type="text" class="form-control" name="Name" required>
+              <input type="text" class="form-control" id="volunteerName" name="Name" required>
             </div>
             <div class="form-group">
               <label>Email</label>
@@ -117,6 +137,55 @@
     </div>
   </div>
 
+  <script>
+    document.querySelector('#volunteerModalForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Stop default form submission
+    
+      const name = document.querySelector('#volunteerName').value;
+      const organization = document.querySelector('#volunteerOrg').value;
+    
+      fetch('/register', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, organization })
+      })
+      .then(res => res.json())
+      .then(data => {
+        alert(data.message || data.error);
+        document.querySelector('#volunteerName').value = '';
+        $('#registerModal').modal('hide'); // Close modal
+      })
+      .catch(err => console.error(err));
+    });
+    </script>
+    
+ <script>
+  document.addEventListener('click', function(e) {
+    if (e.target && e.target.classList.contains('remove-member')) {
+      const org = e.target.getAttribute('data-org');
+      const name = e.target.getAttribute('data-member');
+  
+      if (confirm(`Remove ${name} from ${org}?`)) {
+        fetch('/remove_member', {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name, organization: org })
+        })
+        .then(res => res.json())
+        .then(data => {
+          alert(data.message || data.error);
+          location.reload(); // Refresh the list
+        })
+        .catch(err => console.error(err));
+      }
+    }
+  });
+  </script>
+     
 <!-- ============FOOTER============= -->
 <footer id="footer"> 
   <div class="footer-content container text-center">
