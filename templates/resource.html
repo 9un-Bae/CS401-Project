@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <meta http-equiv="content-type" content="text/html; charset=UTF-8">
       <meta charset="utf-8">
       <title>Humanity</title>
-      <meta name="generator" content="Bootply" />
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-      <!-- Latest compiled and minified CSS -->
+      <!-- Styles -->
       <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-      <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}" />
-      <link rel="stylesheet" href="{{ url_for('static', filename='css/testimonial.css') }}" />
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+      <link rel="stylesheet" href="{{ url_for('static', filename='css/testimonial.css') }}">
       <link rel="stylesheet" href="{{ url_for('static', filename='css/font-awesome.min.css') }}">
-      <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+      <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
   </head>
 
   <body>
     <div class="header container text-center">
-      <a rel="home" href="index.html">
+      <a href="index.html">
         <img src="{{ url_for('static', filename='img/HH.png') }}" width="200" alt="logo" class="img-responsive center-block">
       </a>
     </div>
@@ -25,10 +23,10 @@
     <div class="navbar" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
         </button>
       </div>
       <div class="collapse navbar-collapse">
@@ -47,97 +45,59 @@
     </div>
 
     <section id="blog-isotope" class="subpage bg-white">
-    <div class="overlay-light">
-      <div id="content" class="container">
-        <div class="posts">
-          <!-- post 1 -->
-          <div class="post item col-md-4 col-xs-12 col-sm-4">
-            <div class="panel">
-              <div class="panel-header">
-                <a href="https://www.alohaharvest.org/" target="_blank">
-                  <img src="{{ url_for('static', filename='img/AlohaHarvest.jpg') }}" class="img-responsive" alt="Aloha Harvest Logo"/>
-                </a>
+      <div class="overlay-light">
+        <div id="content" class="container">
+          <div class="posts">
+            {% for resource in data %}
+              <div class="post item col-md-3">
+                <div class="panel">
+                  <div class="panel-header">
+                    <a href="{{ resource.url }}" target="_blank">
+                      <img src="{{ url_for('static', filename=resource.image) }}" class="img-responsive" alt="{{ resource.name }} logo" width = 400>
+                    </a>
+                  </div>
+                  <div class="panel-body">
+                    <h3 class="post-title">
+                      <a href="{{ resource.url }}" target="_blank">{{ resource.name }}</a>
+                    </h3>
+                    <p>{{ resource.description }}</p>
+                  </div>
+                </div>
               </div>
-              <div class="panel-body">
-                <h3 class="post-title">
-                  <a href="https://www.alohaharvest.org/" target="_blank">Aloha Harvest</a>
-                </h3>
-                <p>Aloha Harvest is a Hawaiʻi-based nonprofit that rescues quality excess food and delivers it free of charge to organizations feeding those in need.</p>
-              </div>
-            </div>
-          </div>
-          <!-- post 2 -->
-          <div class="post item col-md-4 col-xs-12 col-sm-4">
-            <div class="panel">
-              <div class="panel-header">
-                <a href="https://www.thepantry.org/" target="_blank">
-                  <img src="{{ url_for('static', filename='img/Pantry.png') }}" class="img-responsive" alt="The Pantry Logo"/>
-                </a>
-              </div>
-              <div class="panel-body">
-                <h3 class="post-title">
-                  <a href="https://www.thepantry.org/" target="_blank">The Pantry</a>
-                </h3>
-                <p>The Pantry is a food distribution service by Feeding Hawaiʻi Together, offering a grocery-style experience where individuals and families can select free, nutritious food with dignity and care.</p>
-              </div>
-            </div>
-          </div>
-          <!-- post 3 -->
-          <div class="post item col-md-4 col-xs-12 col-sm-4">
-            <div class="panel">
-              <div class="panel-header">
-                <a href="https://hawaiifoodbank.org/" target="_blank">
-                  <img src="{{ url_for('static', filename='img/FoodBank.jpg') }}" class="img-responsive" alt="Hawai'i Food Bank Logo"/>
-                </a>
-              </div>
-              <div class="panel-body">
-                <h3 class="post-title">
-                  <a href="https://hawaiifoodbank.org/" target="_blank">Hawai'i Food Bank</a>
-                </h3>
-                <p>Hawai‘i Foodbank provides food assistance to families, keiki, and kūpuna across the islands, working with a network of partners to ensure no one in our community goes hungry.</p>
-              </div>
-            </div>
+            {% endfor %}
           </div>
         </div>
-      </div><!-- /end overlay -->
-    </div>
-    </section><!--=== / END blog ===-->
+      </div>
+    </section>
 
-<!-- ============FOOTER============= -->
-<footer id="footer"> 
-  <div class="footer-content container text-center">
-    
-    <!-- Heading -->
-    <h4>Great Love for Humanity</h4>
-    
-    <!-- Project Info -->
-    <div class="project-info mt-3">
-      <p><strong>Chaminade University of Honolulu</strong></p>
-      <p>CS401 – Software Engineering • Spring 2025</p>
-      <p>Team: The Hunger Helpers</p>
-      <p>&copy; 2025 Hunger Helpers. All rights reserved.</p>
-    </div>
-  </div>
-</footer>
+    <!-- Footer -->
+    <footer id="footer">
+      <div class="footer-content container text-center">
+        <h4>Great Love for Humanity</h4>
+        <div class="project-info mt-3">
+          <p><strong>Chaminade University of Honolulu</strong></p>
+          <p>CS401 – Software Engineering • Spring 2025</p>
+          <p>Team: The Hunger Helpers</p>
+          <p>&copy; 2025 Hunger Helpers. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
 
-  <!-- script references -->
+    <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
     <script src="{{ url_for('static', filename='js/nav-hover.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery.bxslider.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
-    <!-- Place in the <head>, after the three links -->
+    <script src="{{ url_for('static', filename='js/jquery.bxslider.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
     <script>
-    $('.testimonials-slider').bxSlider({
-      slideWidth: 800,
-      minSlides: 1,
-      maxSlides: 1,
-      slideMargin: 32,
-      auto: true,
-      autoControls: true
+      $('.testimonials-slider').bxSlider({
+        slideWidth: 800,
+        minSlides: 1,
+        maxSlides: 1,
+        slideMargin: 32,
+        auto: true,
+        autoControls: true
       });
-    </script>
-    <script type="text/javascript">
     </script>
   </body>
 </html>
