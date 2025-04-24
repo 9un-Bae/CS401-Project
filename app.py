@@ -133,14 +133,6 @@ def volunteer():
         upcoming_events=volunteer_data["upcoming_events"]
     )
 
-@app.route('/add_volunteer', methods=['POST'])
-def registration():
-    print (request.form)
-    return render_template(
-        "volunteer.html",
-        organizations=volunteer_data["organizations"],
-        upcoming_events=volunteer_data["upcoming_events"]
-    )
 
 @app.route('/register', methods=['POST'])
 def register():
