@@ -1,6 +1,103 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
+
+
+volunteer_data = {
+    "organizations": [
+        {
+            "name": "Aloha Harvest",
+            "website": "https://alohaharvest.org/",
+            "image": "imgs/alohaharvest.png",
+            "description": "Help rescue quality food and redistribute it to those in need across Oʻahu."
+        },
+        {
+            "name": "Hawaii Meals on Wheels",
+            "website": "https://hmow.org/",
+            "image": "imgs/hmow.png",
+            "description": "Deliver meals and build meaningful connections with kūpuna in your community."
+        },
+        {
+            "name": "Hawaii Foodbank",
+            "website": "https://hawaiifoodbank.org/",
+            "image": "imgs/hawaiifoodbank.png",
+            "description": "Sort, pack, or distribute food to fight hunger across the islands."
+        },
+        {
+            "name": "The Pantry",
+            "website": "https://thepantry.org/",
+            "image": "imgs/thepantry.png",
+            "description": "Support Hawaii’s first e-commerce food distribution center helping low-income families."
+        },
+        {
+            "name": "Angel Network Charities",
+            "website": "https://example.org/angel-network",
+            "image": "imgs/angelnetwork.png",
+            "description": "Provides food, clothing, and support to those in need."
+        },
+        {
+            "name": "River of Life Mission",
+            "website": "https://riveroflifemission.org",
+            "image": "imgs/riveroflife.png",
+            "description": "Helps those experiencing homelessness with meals and services."
+        },
+        {
+            "name": "Giving Hope",
+            "website": "https://example.org/giving-hope",
+            "image": "imgs/givinghope.png",
+            "description": "Inspires lives through faith-based community outreach programs."
+        },
+        {
+            "name": "Aloha United Way",
+            "website": "https://www.auw.org",
+            "image": "imgs/auw.png",
+            "description": "Supports Hawaii's local families through community partnerships."
+        }
+    ],
+    "upcoming_events": {
+        "Aloha Harvest": [
+            {"date": "Apr 27", "title": "Kakaʻako Food Rescue Drive"},
+            {"date": "May 5", "title": "Volunteer Orientation (Zoom)"},
+            {"date": "May 18", "title": "Downtown Distribution Day"}
+        ],
+        "Hawaii Meals on Wheels": [
+            {"date": "Apr 25", "title": "Waikīkī Meal Delivery Route"},
+            {"date": "May 2", "title": "Kūpuna Caregiver Workshop"},
+            {"date": "May 10", "title": "Mānoa Volunteer Meet-Up"}
+        ],
+        "Hawaii Foodbank": [
+            {"date": "Apr 29", "title": "Community Food Sort Day"},
+            {"date": "May 6", "title": "Food Drive at Ala Moana"},
+            {"date": "May 20", "title": "Warehouse Support Shift"}
+        ],
+        "The Pantry": [
+            {"date": "Apr 30", "title": "Volunteer Fulfillment Shift"},
+            {"date": "May 8", "title": "Packing and Prep Session"},
+            {"date": "May 15", "title": "Drive-Thru Distribution Event"}
+        ],
+        "Angel Network Charities": [
+            {"date": "May 2", "title": "Drive-Thru Pantry Day"},
+            {"date": "May 9", "title": "Volunteer Coordination Day"},
+            {"date": "May 16", "title": "Community Clothing Drive"}
+        ],
+        "River of Life Mission": [
+            {"date": "Apr 26", "title": "Mobile HUB Meal Outreach"},
+            {"date": "May 3", "title": "Community Worship & Meal"},
+            {"date": "May 17", "title": "40-Year Anniversary Celebration"}
+        ],
+        "Giving Hope": [
+            {"date": "Apr 28", "title": "Hope Food Distribution"},
+            {"date": "May 5", "title": "Charity Golf Tournament"},
+            {"date": "May 12", "title": "Youth Mentorship Weekend"}
+        ],
+        "Aloha United Way": [
+            {"date": "Apr 19", "title": "Chocolate, Champagne & Couture For-A-Cause"},
+            {"date": "Aug 6", "title": "Workplace Giving Campaign Kickoff"},
+            {"date": "Ongoing", "title": "Volunteer Opportunities Across O‘ahu"}
+        ]
+    }
+}
+
 
 @app.route('/index.html', methods=['GET'])
 def index():
@@ -14,9 +111,23 @@ def about():
 def donate():
     return render_template('donate.html')
 
-@app.route('/volunteer.html', methods=['GET'])
+@app.route('/volunteer.html')
 def volunteer():
-    return render_template('volunteer.html')
+    return render_template(
+        "volunteer.html",
+        organizations=volunteer_data["organizations"],
+        upcoming_events=volunteer_data["upcoming_events"]
+    )
+
+@app.route('/add_volunteer', methods=['POST'])
+def registration():
+    print (request.form)
+    return render_template(
+        "volunteer.html",
+        organizations=volunteer_data["organizations"],
+        upcoming_events=volunteer_data["upcoming_events"]
+    )
+
 
 @app.route('/resource.html', methods=['GET'])
 def resource():
