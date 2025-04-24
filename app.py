@@ -98,6 +98,20 @@ volunteer_data = {
     }
 }
 
+resource_data = [
+    {"name": "Aloha Harvest", "image": "img/AlohaHarvest.jpg", "url": "https://www.alohaharvest.org/", "description": "Aloha Harvest is a Hawaiʻi-based nonprofit that rescues quality excess food and delivers it free of charge to organizations feeding those in need."},
+    {"name": "The Pantry", "image": "img/Pantry.png", "url": "https://www.thepantry.org/", "description": "The Pantry is a food distribution service by Feeding Hawaiʻi Together, offering a grocery-style experience where individuals and families can select free, nutritious food with dignity and care."},
+    {"name": "Hawai'i Food Bank", "image": "img/FoodBank.jpg", "url": "https://hawaiifoodbank.org/", "description": "Hawai‘i Foodbank provides food assistance to families, keiki, and kūpuna across the islands, working with a network of partners to ensure no one in our community goes hungry."},
+    {"name": "Angel Network Charities", "image": "imgs/angelnetwork.png", "url": "https://www.angelnetworkcharities.org/", "description": "Angel Network Charities provides food, basic necessities, and supportive services to individuals and families in need across O‘ahu, striving to uplift the community."},
+    {"name": "River of Life Mission", "image": "imgs/riveroflife.png", "url": "https://www.riveroflifemission.org/", "description": "description"},
+    {"name": "Giving Hope Hawai'i", "image": "images/GiveHopeLogo.png", "url": "https://www.givinghopehawaii.org/", "description": "description"},
+    {"name": "Aloha United Way", "image": "imgs/auw.png", "url": "https://www.auw.org/", "description": "description"},
+    {"name": "Hawai'i Meals on Wheels", "image": "imgs/hmow.png", "url": "https://hmow.org/", "description": "description"}
+]
+
+@app.route('/resource_data', methods=['GET'])
+def get_resources():
+    return resource_data
 
 @app.route('/index.html', methods=['GET'])
 def index():
@@ -131,7 +145,7 @@ def registration():
 
 @app.route('/resource.html', methods=['GET'])
 def resource():
-    return render_template('resource.html')
+    return render_template('resource.html', data = resource_data)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
