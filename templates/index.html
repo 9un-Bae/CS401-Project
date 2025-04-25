@@ -93,44 +93,56 @@
       </p>
     </section>
 
-    <!-- News -->
+    <!-- Explore Our Mission Section -->
 <div class="divider col-12">
-  <div class="header-text"><span>Blog</span> News</div>
+  <div class="header-text"><span>Explore</span> Our Mission</div>
 </div>
 
-<section class="blog">
-  <div class="blog-row">
-    <!-- Post 1 -->
-    <div class="blok-read-sm card">
-      <img src="{{ url_for('static', filename='img/sea.jpg') }}" class="blog-img" alt="Blog 1">
-      <div class="content-block">
-        <h4><a href="single1.html">Title 1</a></h4>
-        <p>Opening sentence for post 1.</p>
-        <a href="single1.html" class="button-main bg-fio-point">Read more</a>
+<section class="container text-center" style="margin-top: 40px; margin-bottom: 60px;">
+  <div class="row justify-content-center">
+
+    <!-- Food Resources Card -->
+    <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
+      <div class="panel text-center" style="background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);">
+        <img src="{{ url_for('static', filename='imgs/resources.png') }}"
+             alt="Food Resources"
+             style="height: 160px; width: auto; object-fit: contain; margin-bottom: 15px; padding: 5px;"
+             class="img-responsive center-block">
+        <h4 style="color: #007b83; font-weight: bold;">Food Resources</h4>
+        <p>Find free and accessible food programs across Hawaiʻi.</p>
+        <a href="{{ url_for('resource') }}" class="btn btn-success">Explore Resources</a>
       </div>
     </div>
 
-    <!-- Post 2 -->
-    <div class="blok-read-sm card">
-      <img src="{{ url_for('static', filename='img/sea.jpg') }}" class="blog-img" alt="Blog 2">
-      <div class="content-block">
-        <h4><a href="single2.html">Title 2</a></h4>
-        <p>Opening sentence for post 2.</p>
-        <a href="single2.html" class="button-main bg-fio-point">Read more</a>
+    <!-- Volunteer Card -->
+    <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
+      <div class="panel text-center" style="background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);">
+        <img src="{{ url_for('static', filename='imgs/volunteer.png') }}"
+             alt="Volunteer"
+             style="height: 160px; width: auto; object-fit: contain; margin-bottom: 15px; padding: 5px;"
+             class="img-responsive center-block">
+        <h4 style="color: #007b83; font-weight: bold;">Volunteer</h4>
+        <p>Give your time to help local families and communities in need.</p>
+        <a href="{{ url_for('volunteer') }}" class="btn btn-primary">Join Us</a>
       </div>
     </div>
 
-    <!-- Post 3 -->
-    <div class="blok-read-sm card">
-      <img src="{{ url_for('static', filename='img/sea.jpg') }}" class="blog-img" alt="Blog 3">
-      <div class="content-block">
-        <h4><a href="single3.html">Title 3</a></h4>
-        <p>Opening sentence for post 3.</p>
-        <a href="single3.html" class="button-main bg-fio-point">Read more</a>
+    <!-- Donations Card -->
+    <div class="col-md-4 col-sm-6" style="margin-bottom: 30px;">
+      <div class="panel text-center" style="background: #ffffff; border-radius: 12px; padding: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);">
+        <img src="{{ url_for('static', filename='imgs/donate.png') }}"
+             alt="Donate"
+             style="height: 160px; width: auto; object-fit: contain; margin-bottom: 15px; padding: 5px;"
+             class="img-responsive center-block">
+        <h4 style="color: #007b83; font-weight: bold;">Donations</h4>
+        <p>Support our mission with food, essentials, or financial gifts.</p>
+        <a href="{{ url_for('donate') }}" class="btn btn-warning">Donate Now</a>
       </div>
     </div>
+
   </div>
 </section>
+
 
 <!-- ============FOOTER============= -->
     <footer id="footer"> 
