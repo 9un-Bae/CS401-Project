@@ -49,3 +49,11 @@ Whether you're in need or ready to help, Hunger Helpers bridges the gap between 
 - **Backend:** Python, Flask
 - **Templating:** Jinja2
 - **Version Control:** Git, GitHub
+
+---
+
+## 📄 Project Documentation
+
+- 🎞️ [Presentation Slides (PPTX)](docs/Presentation.pptx)
+- 📘 [Final Report (PDF)](docs/PDF%20Report.pdf)
+
