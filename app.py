@@ -109,6 +109,17 @@ resource_data = [
     {"name": "Hawai'i Meals on Wheels", "image": "imgs/hmow.png", "url": "https://hmow.org/", "description": "Hawai‘i Meals on Wheels delivers meals and care to homebound seniors, helping them stay nourished, independent, and connected."}
 ]
 
+donate_data = [
+{"name": "Aloha Harvest", "image": "img/AlohaHarvest.jpg", "url": "https://alohaharvest.org/donate-money/"},
+    {"name": "The Pantry", "image": "img/Pantry.png", "url": "https://thepantry.app.neoncrm.com/forms/donation"},
+    {"name": "Hawai'i Food Bank", "image": "img/FoodBank.jpg", "url": "https://hawaiifoodbank.org/?form=FUNLSDJGUQN"},
+    {"name": "Angel Network Charities", "image": "imgs/angelnetwork.png", "url": "https://www.angelnetworkcharities.org/blank-page"},
+    {"name": "River of Life Mission", "image": "imgs/riveroflife.png", "url": "https://www.riveroflifemission.org/?form=donate"},
+    {"name": "Giving Hope Hawai'i", "image": "images/GiveHopeLogo.png", "url": "https://givinghopenola.org/donate/"},
+    {"name": "Aloha United Way", "image": "imgs/auw.png", "url": "https://www.auw.org/donate/"},
+    {"name": "Hawai'i Meals on Wheels", "image": "imgs/hmow.png", "url": "https://hmow.org/donate/"}
+]
+
 @app.route('/resource_data', methods=['GET'])
 def get_resources():
     return resource_data
@@ -123,7 +134,7 @@ def about():
 
 @app.route('/donate.html', methods=['POST', 'GET'])
 def donate():
-    return render_template('donate.html')
+    return render_template('donate.html', data = donate_data)
 
 @app.route('/volunteer.html')
 def volunteer():

@@ -42,35 +42,43 @@
         </div>
     </div>
 
-<!-- Donate -->
-<div class="container donate-orgs">
-  <div class="row text-center">
-
-    <div class="col-md-4">
-      <div class="org-box">
-        <img src="{{ url_for('static', filename='images/FoodBankLogo.png') }}" alt="Hawaii Foodbank" class="img-responsive center-block org-img">
-        <h3>Hawaii Foodbank</h3>
-        <a href="https://hawaiifoodbank.org/?form=FUNLSDJGUQN" target="_blank" class="btn btn-donate">Donate</a>
-      </div>
+    <div class="divider col-sm-12 col-xs-12 col-md-12">
+      <div class="header-text"><span>Donate</span> Here</div>
     </div>
-
-    <div class="col-md-4">
-      <div class="org-box">
-        <img src="{{ url_for('static', filename='images/AlohaHarvestLogo.jpeg') }}" alt="Aloha Harvest" class="img-responsive center-block org-img">
-        <h3>Aloha Harvest</h3>
-        <a href="https://alohaharvest.org/donate-money/" target="_blank" class="btn btn-donate">Donate</a>
+    
+    <section id="blog-isotope" class="subpage bg-white">
+      <div class="overlay-light">
+        <div id="content" class="container">
+          {% for donate in data %}
+            {% if loop.index0 % 4 == 0 %}
+              <div class="row posts" style="margin-bottom: 40px;">
+            {% endif %}
+    
+            <div class="post item col-md-3 col-sm-6 col-xs-12">
+              <div class="panel">
+                <div class="panel-header">
+                  <a href="{{ donate.url }}" target="_blank">
+                    <img src="{{ url_for('static', filename=donate.image) }}" class="img-responsive center-block" alt="{{ donate.name }} logo" style="max-height: 150px;">
+                  </a>
+                </div>
+                <div class="panel-body text-center">
+                  <h3 class="post-title">
+                    <a href="{{ donate.url }}" target="_blank">{{ donate.name }}</a>
+                  </h3>
+                  {% if donate.description %}
+                    <p>{{ donate.description }}</p>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+    
+            {% if loop.index0 % 4 == 3 or loop.last %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
       </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="org-box">
-        <img src="{{ url_for('static', filename='images/GiveHopeLogo.png') }}" alt="Giving Hope" class="img-responsive center-block org-img">
-        <h3>Giving Hope</h3>
-        <a href="https://givinghopenola.org/donate/" target="_blank" class="btn btn-donate">Donate</a>
-      </div>
-    </div>
-  </div>
-</div>
+    </section>    
 
 <!-- Message -->
     <div class="container donate-text">
