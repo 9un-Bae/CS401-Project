@@ -103,10 +103,10 @@ resource_data = [
     {"name": "The Pantry", "image": "img/Pantry.png", "url": "https://www.thepantry.org/", "description": "The Pantry is a food distribution service by Feeding Hawaiʻi Together, offering a grocery-style experience where individuals and families can select free, nutritious food with dignity and care."},
     {"name": "Hawai'i Food Bank", "image": "img/FoodBank.jpg", "url": "https://hawaiifoodbank.org/", "description": "Hawai‘i Foodbank provides food assistance to families, keiki, and kūpuna across the islands, working with a network of partners to ensure no one in our community goes hungry."},
     {"name": "Angel Network Charities", "image": "imgs/angelnetwork.png", "url": "https://www.angelnetworkcharities.org/", "description": "Angel Network Charities provides food, basic necessities, and supportive services to individuals and families in need across O‘ahu, striving to uplift the community."},
-    {"name": "River of Life Mission", "image": "imgs/riveroflife.png", "url": "https://www.riveroflifemission.org/", "description": "description"},
-    {"name": "Giving Hope Hawai'i", "image": "images/GiveHopeLogo.png", "url": "https://www.givinghopehawaii.org/", "description": "description"},
-    {"name": "Aloha United Way", "image": "imgs/auw.png", "url": "https://www.auw.org/", "description": "description"},
-    {"name": "Hawai'i Meals on Wheels", "image": "imgs/hmow.png", "url": "https://hmow.org/", "description": "description"}
+    {"name": "River of Life Mission", "image": "imgs/riveroflife.png", "url": "https://www.riveroflifemission.org/", "description": "River of Life Mission provides meals, essentials, and hope to Honolulu’s houseless community, helping people move toward a brighter future."},
+    {"name": "Giving Hope Hawai'i", "image": "images/GiveHopeLogo.png", "url": "https://www.givinghopehawaii.org/", "description": "Giving Hope Hawai‘i supports those in crisis by offering resources and services that restore dignity and inspire lasting change."},
+    {"name": "Aloha United Way", "image": "imgs/auw.png", "url": "https://www.auw.org/", "description": "Aloha United Way connects people and resources to improve lives, supporting programs that build a stronger, healthier Hawai‘i."},
+    {"name": "Hawai'i Meals on Wheels", "image": "imgs/hmow.png", "url": "https://hmow.org/", "description": "Hawai‘i Meals on Wheels delivers meals and care to homebound seniors, helping them stay nourished, independent, and connected."}
 ]
 
 @app.route('/resource_data', methods=['GET'])
