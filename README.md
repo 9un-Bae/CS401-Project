@@ -33,10 +33,16 @@ Whether you're in need or ready to help, Hunger Helpers bridges the gap between 
 2. **Install Flask (if not already installed):**
    ```bash
    pip install Flask
-3. **Run Flask server:**
+3. **Build Docker Container for API**
+   ```bash
+   docker build -t <your-username>/<image-name>:<version> -f <dockerfile> .
+4. **Run Docker Container**
+   ```bash
+   docker run --name "<flask-app-name>" -d -p 5000:5000 <your-username>/<image-name>:1.0
+5. **Run Flask server:**
    ```bash
    flask --app app.py --debug run
-4. **Open your browser and go to:**
+6. **Open your browser and go to:**
    ```
    http://127.0.0.1:5000/index.html
    ```
