@@ -62,4 +62,6 @@ Whether you're in need or ready to help, Hunger Helpers bridges the gap between 
 
 - 🎞️ [Presentation Slides (PPTX)](docs/Presentation.pptx)
 - 📘 [Final Report (PDF)](docs/PDF%20Report.pdf)
+- 🧩 [UML Class Diagram](docs/UML%20Class%20Diagram.png)
+
 
