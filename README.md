@@ -64,4 +64,13 @@ Whether you're in need or ready to help, Hunger Helpers bridges the gap between 
 - 📘 [Final Report (PDF)](docs/PDF%20Report.pdf)
 - 🧩 [UML Class Diagram](docs/UML%20Class%20Diagram.png)
 
+---
+
+## 👥 Group Members
+
+- Johnny Bae
+- Lydia Hefel
+- Upumoni Logologo
+
+
 
